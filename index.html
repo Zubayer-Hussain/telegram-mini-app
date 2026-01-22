@@ -32,21 +32,23 @@
         </section>
 
         <section id="tasks" class="tab-content">
-            <h2>Tasks</h2>
+            <h2 style="text-align: center;">Tasks</h2>
+            
             <div class="task-card">
                 <p>Join X-Coin Channel</p>
-                <button class="claim-btn" onclick="window.open('https://t.me/your_channel')">+5,000</button>
+                <button id="task-channel" class="claim-btn" onclick="handleTask('channel', 'https://t.me/your_channel_link', 5000)">+5,000</button>
             </div>
+
             <div class="task-card">
                 <p>Follow us on X</p>
-                <button class="claim-btn">+10,000</button>
+                <button id="task-twitter" class="claim-btn" onclick="handleTask('twitter', 'https://x.com/your_profile', 10000)">+10,000</button>
             </div>
         </section>
 
         <section id="friends" class="tab-content">
-            <h2>Invite Friends</h2>
-            <p>Share your link and get 10% of their earnings!</p>
-            <button id="invite-btn" class="main-action-btn">Invite a Friend</button>
+            <h2 style="text-align: center;">Friends</h2>
+            <p style="text-align: center;">Invite friends to earn more!</p>
+            <button id="invite-btn" class="main-action-btn" style="width:100%; padding:15px; border-radius:15px; background:#007bff; border:none; color:white; font-weight:bold;">Invite a Friend</button>
         </section>
 
         <nav class="bottom-nav">
