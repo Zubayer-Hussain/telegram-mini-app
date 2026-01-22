@@ -3,40 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>X-Coin Mini App</title>
+    <title>X-Coin</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <div id="game-container">
+    <div id="app">
         <header>
             <div class="user-info">
-                <span id="user-name">Player</span>
-                <span class="badge">PRO</span>
+                <span id="username">Player</span>
+                <span class="badge">CHAMPION</span>
             </div>
-            <div class="profit-stats">
-                <span>Profit per tap: <b>+1</b></span>
+            <div class="stats-top">
+                <p>Profit per tap: <span class="gold">+1</span></p>
             </div>
         </header>
 
-        <main>
-            <div class="balance-section">
-                <img src="https://img.icons8.com/color/48/000000/coins.png" width="30">
-                <h1 id="coin-balance">0</h1>
+        <section id="mine" class="tab-content active">
+            <div class="balance-container">
+                <img src="https://img.icons8.com/color/48/000000/coins.png" class="coin-icon-small">
+                <h1 id="balance">0</h1>
             </div>
-
-            <div class="tap-area">
+            <div class="coin-tap-area">
                 <button id="tap-btn">
-                    <img src="logo.png" alt="X-Coin Logo" onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ultra-ball.png'">
+                    <img src="logo.png" alt="X" id="main-coin" onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ultra-ball.png'">
                 </button>
             </div>
-        </main>
+        </section>
+
+        <section id="tasks" class="tab-content">
+            <h2>Tasks</h2>
+            <div class="task-card">
+                <p>Join X-Coin Channel</p>
+                <button class="claim-btn" onclick="window.open('https://t.me/your_channel')">+5,000</button>
+            </div>
+            <div class="task-card">
+                <p>Follow us on X</p>
+                <button class="claim-btn">+10,000</button>
+            </div>
+        </section>
+
+        <section id="friends" class="tab-content">
+            <h2>Invite Friends</h2>
+            <p>Share your link and get 10% of their earnings!</p>
+            <button id="invite-btn" class="main-action-btn">Invite a Friend</button>
+        </section>
 
         <nav class="bottom-nav">
-            <div class="nav-item active">⛏️ <span>Mine</span></div>
-            <div class="nav-item">📋 <span>Tasks</span></div>
-            <div class="nav-item">🚀 <span>Boost</span></div>
-            <div class="nav-item">👥 <span>Friends</span></div>
+            <button class="nav-item active" onclick="showTab('mine', this)">⛏️<span>Mine</span></button>
+            <button class="nav-item" onclick="showTab('tasks', this)">📋<span>Tasks</span></button>
+            <button class="nav-item" onclick="showTab('friends', this)">👥<span>Friends</span></button>
         </nav>
     </div>
     <script src="script.js"></script>
