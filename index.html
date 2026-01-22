@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>🐹 Xcoin Miner</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>X-Coin Mini App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <h1>🐹 Xcoin Miner</h1>
-  <img src="https://i.imgur.com/Yr7Zq6F.png" alt="Hamster" id="hamster">
-  <p>Coins: <span id="coins">0</span></p>
-  <button onclick="upgradeHamster()">Upgrade Hamster (+1 Xcoin/sec)</button>
-  <script src="script.js"></script>
+    <div id="game-container">
+        <header>
+            <div class="user-info">
+                <span id="user-name">Player</span>
+                <span class="badge">PRO</span>
+            </div>
+            <div class="profit-stats">
+                <span>Profit per tap: <b>+1</b></span>
+            </div>
+        </header>
+
+        <main>
+            <div class="balance-section">
+                <img src="https://img.icons8.com/color/48/000000/coins.png" width="30">
+                <h1 id="coin-balance">0</h1>
+            </div>
+
+            <div class="tap-area">
+                <button id="tap-btn">
+                    <img src="logo.png" alt="X-Coin Logo" onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ultra-ball.png'">
+                </button>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active">⛏️ <span>Mine</span></div>
+            <div class="nav-item">📋 <span>Tasks</span></div>
+            <div class="nav-item">🚀 <span>Boost</span></div>
+            <div class="nav-item">👥 <span>Friends</span></div>
+        </nav>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
