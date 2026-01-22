@@ -3,8 +3,13 @@ const balanceDisplay = document.getElementById('coin-balance');
 const tapBtn = document.getElementById('tap-btn');
 
 // Load saved balance
-let coins = parseInt(localStorage.getItem('xcoins')) || 0;
-balanceDisplay.innerText = coins.toLocaleString();
+let coins = 0;
+function handleTap() {
+    coins++;
+    updateUI();
+    // This tells Telegram to vibrate the phone
+    window.Telegram.WebApp.HapticFeedback.impactOccurred('medium');
+}
 
 // Initialize Telegram
 tg.expand();
