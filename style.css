@@ -1,29 +1,69 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f7f3e9;
-  margin-top: 50px;
+    background-color: #0b1a2b;
+    color: white;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
-h1 {
-  color: #ff6f61;
+#game-container {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
-#hamster {
-  width: 150px;
-  margin: 20px 0;
+header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    opacity: 0.8;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin-top: 20px;
-  cursor: pointer;
-  background-color: #ffcc00;
-  border: none;
-  border-radius: 5px;
+.balance-section {
+    text-align: center;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-button:hover {
-  background-color: #ffdd33;
+#coin-balance { font-size: 54px; margin: 0; color: #ffcc00; }
+
+.tap-area {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#tap-btn {
+    background: radial-gradient(circle, #1a3a5a 0%, #0b1a2b 100%);
+    border: 8px solid #1e3a5a;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    transition: transform 0.05s;
+    box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
+}
+
+#tap-btn:active { transform: scale(0.92); }
+
+#tap-btn img { width: 150px; height: 150px; object-fit: contain; }
+
+.bottom-nav {
+    background: #152a41;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.nav-item { font-size: 12px; text-align: center; color: #888; }
+.nav-item.active { color: #fff; }
