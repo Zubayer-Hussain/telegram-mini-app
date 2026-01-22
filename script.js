@@ -1,14 +1,20 @@
-let coins = 0;
-let miningRate = 1;
+const tg = window.Telegram.WebApp;
+const balanceDisplay = document.getElementById('coin-balance');
+const tapBtn = document.getElementById('tap-btn');
 
-// Auto-mining every second
-setInterval(() => {
-  coins += miningRate;
-  document.getElementById("coins").innerText = coins;
-}, 1000);
+// Load saved balance
+let coins = parseInt(localStorage.getItem('xcoins')) || 0;
+balanceDisplay.innerText = coins.toLocaleString();
 
-// Upgrade hamster
-function upgradeHamster() {
-  miningRate += 1;
-  alert("Hamster upgraded! Mining rate: " + miningRate + " Xcoin/sec");
-}
+// Initialize Telegram
+tg.expand();
+document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Player";
+
+tapBtn.addEventListener('click', () => {
+    coins += 1;
+    balanceDisplay.innerText = coins.toLocaleString();
+    localStorage.setItem('xcoins', coins);
+
+    // Mobile Vibrate
+    tg.HapticFeedback.impactOccurred('medium');
+});
