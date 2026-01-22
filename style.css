@@ -1,69 +1,64 @@
-body {
-    background-color: #0b1a2b;
-    color: white;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+:root {
+    --bg-color: #0b1a2b;
+    --card-bg: #152a41;
+    --text-primary: #ffffff;
+    --accent-gold: #ffcc00;
 }
 
-#game-container {
-    width: 100%;
-    max-width: 450px;
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+}
+
+#app {
     display: flex;
     flex-direction: column;
+    height: 100%;
     padding: 20px;
+    box-sizing: border-box;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    opacity: 0.8;
-}
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.badge { background: #1e3a5a; padding: 4px 10px; border-radius: 10px; font-size: 10px; font-weight: bold; }
 
-.balance-section {
-    text-align: center;
-    margin: 40px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
+.tab-content { display: none; flex-grow: 1; flex-direction: column; align-items: center; }
+.tab-content.active { display: flex; }
 
-#coin-balance { font-size: 54px; margin: 0; color: #ffcc00; }
-
-.tap-area {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+#balance { font-size: 56px; margin: 10px 0; color: var(--accent-gold); }
+.coin-tap-area { flex-grow: 1; display: flex; align-items: center; justify-content: center; }
 
 #tap-btn {
-    background: radial-gradient(circle, #1a3a5a 0%, #0b1a2b 100%);
-    border: 8px solid #1e3a5a;
+    background: radial-gradient(circle, #1e3a5a 0%, #0b1a2b 100%);
+    border: 10px solid #152a41;
     border-radius: 50%;
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     cursor: pointer;
     transition: transform 0.05s;
-    box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 50px rgba(0, 153, 255, 0.1);
 }
 
-#tap-btn:active { transform: scale(0.92); }
-
-#tap-btn img { width: 150px; height: 150px; object-fit: contain; }
+#tap-btn:active { transform: scale(0.9); }
+#main-coin { width: 180px; filter: drop-shadow(0 0 15px rgba(255, 204, 0, 0.4)); }
 
 .bottom-nav {
-    background: #152a41;
+    background: var(--card-bg);
     display: flex;
     justify-content: space-around;
-    padding: 15px;
-    border-radius: 20px;
+    padding: 15px 10px;
+    border-radius: 25px;
     margin-bottom: 10px;
 }
 
-.nav-item { font-size: 12px; text-align: center; color: #888; }
-.nav-item.active { color: #fff; }
+.nav-item { background: none; border: none; color: #888; display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: 12px; }
+.nav-item.active { color: #fff; font-weight: bold; }
+
+.task-card { background: var(--card-bg); width: 100%; padding: 15px; border-radius: 15px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+.claim-btn { background: #007bff; border: none; color: white; padding: 8px 15px; border-radius: 10px; font-weight: bold; }
