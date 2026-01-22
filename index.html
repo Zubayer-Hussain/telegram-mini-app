@@ -1,33 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Telegram Mini App</title>
   <meta charset="UTF-8">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #f5f5f5;
-    }
-    button {
-      padding: 12px 20px;
-      font-size: 16px;
-      border: none;
-      background: #0088cc;
-      color: white;
-      border-radius: 8px;
-    }
-  </style>
+  <title>🐹 Xcoin Miner</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <h2>👋 Welcome to My Mini App</h2>
-  <p>Earn coins by watching ads</p>
-
-  <button onclick="Telegram.WebApp.showAlert('Hello from Telegram Mini App!')">
-    Click Me
-  </button>
-
+  <h1>🐹 Xcoin Miner</h1>
+  <img src="https://i.imgur.com/Yr7Zq6F.png" alt="Hamster" id="hamster">
+  <p>Coins: <span id="coins">0</span></p>
+  <button onclick="upgradeHamster()">Upgrade Hamster (+1 Xcoin/sec)</button>
+  <script src="script.js"></script>
 </body>
 </html>
